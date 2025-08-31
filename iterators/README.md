@@ -21,6 +21,13 @@ for i in mapped:
   print(i)
 ```
 
+```rust
+// Rust
+let l = read_list();
+l.iter().foreach(|i| print!("{i}"));
+l.iter().map(|i| i + 42).foreach(|i| print!("{i}"));
+```
+
 ```scala
 // Scala
 l = readList()
