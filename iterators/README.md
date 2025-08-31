@@ -43,7 +43,7 @@ do
   for_ (map (+ 42) l) print
 ```
 
-```
+```OCaml
 (* OCaml *)
 let list = readList
 let print_int = Format.printf "%d\n"
