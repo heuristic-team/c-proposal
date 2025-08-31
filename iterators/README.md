@@ -43,6 +43,15 @@ do
   for_ (map (+ 42) l) print
 ```
 
+```
+(* OCaml *)
+let list = readList
+let print_int = Format.printf "%d\n"
+let () =
+  List.iter print_int list;
+  List.iter print_int (List.map ((+) 42) list)
+```
+
 ## Пример
 
 ### Входные данные
