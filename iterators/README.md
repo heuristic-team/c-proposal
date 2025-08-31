@@ -24,15 +24,15 @@ for i in mapped:
 ```rust
 // Rust
 let l = read_list();
-l.iter().foreach(|i| print!("{i}"));
-l.iter().map(|i| i + 42).foreach(|i| print!("{i}"));
+l.iter().foreach(|i| println!("{i}"));
+l.iter().map(|i| i + 42).foreach(|i| println!("{i}"));
 ```
 
 ```scala
 // Scala
 l = readList()
-l.foreach(print)
-l.map(_ + 42).foreach(print)
+l.foreach(println)
+l.map(_ + 42).foreach(println)
 ```
 
 ```haskell
