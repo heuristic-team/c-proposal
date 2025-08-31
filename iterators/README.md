@@ -30,9 +30,9 @@ l.iter().map(|i| i + 42).foreach(|i| println!("{i}"));
 
 ```scala
 // Scala
-l = readList()
-l.foreach(println)
-l.map(_ + 42).foreach(println)
+val l = readList()
+l foreach println
+l map { _ + 42 } foreach println
 ```
 
 ```haskell
@@ -50,6 +50,13 @@ let print_int = Format.printf "%d\n"
 let () =
   List.iter print_int list;
   List.iter print_int (List.map ((+) 42) list)
+```
+
+```typescript
+// TS/JS
+const list = readList()
+list.forEach(val => console.log(val))
+list.map(val => val + 42).forEach(val => console.log(val))
 ```
 
 ## Пример
