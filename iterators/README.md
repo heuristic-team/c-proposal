@@ -11,6 +11,7 @@
 Тестовая система сама считает список, создаст его, используя описанный интерфейс, и исполнит последовательность действий, эквивалентную этим примерам на разных языках:
 
 ```python
+# Python
 l = readList()
 for i in l:
   print(i)
@@ -21,12 +22,14 @@ for i in mapped:
 ```
 
 ```scala
+// Scala
 l = readList()
 l.foreach(print)
 l.map(_ + 42).foreach(print)
 ```
 
 ```haskell
+-- Haskell
 do
   l <- readList
   for_ l print
