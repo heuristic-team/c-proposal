@@ -17,7 +17,7 @@ static int add42(int x) {
   return x + 42;
 }
 
-static struct List* readList() {
+static List* readList() {
   List* res = newEmptyList();
 
   int x;

@@ -1,4 +1,5 @@
-#include "../api.h"
+#include "../iterator.h"
+#include "../list.h"
 
 #include <stddef.h>
 #include <stdio.h>
@@ -7,7 +8,7 @@ static void printInt(int x) {
   printf("%d ", x);
 }
 
-static void printAll(struct Iterator* iter) {
+static void printAll(Iterator iter) {
   forEach(iter, printInt);
   putchar('\n');
 }
@@ -16,8 +17,8 @@ static int add42(int x) {
   return x + 42;
 }
 
-static struct List* readList() {
-  struct List* res = initList();
+static List* readList() {
+  List* res = newEmptyList();
 
   int x;
   for (;;) {
@@ -31,20 +32,15 @@ static struct List* readList() {
 }
 
 int main() {
-  struct List* list = readList();
-  struct Iterator* list_iter = iterateList(list);
+  List* list = readList();
+  Iterator listIter = iterateList(list);
 
-  printAll(list_iter);
+  printAll(listIter);
+  listIter = iterateList(list);
 
-  deinitListIterator(list_iter);
-  list_iter = iterateList(list);
-
-  struct Iterator* mapped = map(list_iter, add42);
+  Iterator mapped = map(listIter, add42);
   printAll(mapped);
 
-  deinitMap(mapped);
-  deinitListIterator(list_iter);
   deinitList(list);
-
   return 0;
 }
